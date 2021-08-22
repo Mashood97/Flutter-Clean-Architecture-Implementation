@@ -1,16 +1,11 @@
-# flutter_dailytask
+# FLUTTER CLEAN ARCHITECTURE APP.
 
-A new Flutter project.
+![tdd](https://user-images.githubusercontent.com/40804440/130354910-24fe6cf5-b804-470d-b2f2-5827f948a823.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Clean Architecture was instituted by Robert Martin, broadly called ‘UncleBob’. Bob has various crucial books on coding throughout the long term, yet he is most popular for his considerations on ‘Clean’ code. 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Easy Maintainance of big projects.
+2. Seprated layers to manage data.
+3. Easy to do unit testing.
+ and much more.
