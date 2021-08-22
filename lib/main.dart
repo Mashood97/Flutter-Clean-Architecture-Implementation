@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/presentation/cubit/task_cubit.dart';
 import 'helpers/dependency_injection/injection_container.dart' as di;
 
-void main() async {
+ void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+
   await di.init();
   runApp(MyApp());
 }

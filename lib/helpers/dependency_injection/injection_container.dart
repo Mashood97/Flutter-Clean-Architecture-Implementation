@@ -1,3 +1,6 @@
+import 'package:flutter_dailytask/core/data/sources/local_source/app_database.dart';
+import 'package:flutter_dailytask/helpers/constant/constant_app.dart';
+
 import '../../core/data/domain_repo_implementation/local_repository_impl.dart';
 import '../../core/data/sources/local_source/local_data_source.dart';
 import '../../core/data/sources/local_source/local_data_source_impl.dart';
@@ -33,7 +36,17 @@ Future<void> init() async {
       () => LocalRepositoryImplementation(localDataSource: sl!.call()));
 
   //Remote data source <Interface/Abstract Class>
-  sl!.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
+  sl!.registerLazySingleton<LocalDataSource>(
+      () => LocalDataSourceImpl(appDatabase: sl!.call()));
+
+//App database (floor,moor etc)
+
+  // sl!.registerSingletonAsync<AppDatabase>(() async => DBService().init());
+  AppDatabase database =
+      await $FloorAppDatabase.databaseBuilder('test.db').build();
+  sl!.registerLazySingletonAsync(() async => database);
+
+  //Remote Api Client Service
 
   //External for e.g(firebase etcs)
 }
